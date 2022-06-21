@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.entities;
+package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.entities.enums.Category;
+import bg.softuni.mobilele.models.enums.Category;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -31,7 +31,7 @@ public class ModelEntity {
     private LocalDateTime modified;
 
     @ManyToOne
-    private BrandEntity brandId;
+    private BrandEntity brand;
 
 
     public long getId() {
@@ -98,12 +98,12 @@ public class ModelEntity {
         this.modified = modified;
     }
 
-    public BrandEntity getBrandId() {
-        return brandId;
+    public BrandEntity getBrand() {
+        return brand;
     }
 
-    public void setBrandId(BrandEntity brandId) {
-        this.brandId = brandId;
+    public void setBrand(BrandEntity brand) {
+        this.brand = brand;
     }
 
     @Override
@@ -114,7 +114,7 @@ public class ModelEntity {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", startYear=" + startYear +
                 ", endYear=" + endYear +
-                ", brandId=" + (brandId != null ? brandId.getName() : null) +
+                ", brand=" + (brand != null ? brand.getName() : null) +
                 '}';
     }
 }

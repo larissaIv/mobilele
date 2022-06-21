@@ -1,12 +1,12 @@
-package bg.softuni.mobilele.entities;
+package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.entities.enums.Role;
+import bg.softuni.mobilele.models.enums.Role;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class UserRole {
+public class RoleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.entities;
+package bg.softuni.mobilele.models.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,13 +11,12 @@ public class BrandEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
-    private String name;
-
     private LocalDateTime created;
 
     private LocalDateTime modified;
 
+    @Column(nullable = false)
+    private String name;
 
     public long getId() {
         return id;

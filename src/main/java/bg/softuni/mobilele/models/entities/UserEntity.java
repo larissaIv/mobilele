@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.entities;
+package bg.softuni.mobilele.models.entities;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -23,8 +23,8 @@ public class UserEntity {
 
     private boolean isActive;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<UserRole> userRole = new ArrayList<>();
+    @ManyToOne
+    private RoleEntity role;
 
     private String imageUrl;
 
@@ -80,18 +80,12 @@ public class UserEntity {
         isActive = active;
     }
 
-    public List<UserRole> getUserRole() {
-        return userRole;
+    public RoleEntity getRole() {
+        return role;
     }
 
-    public UserEntity setUserRole(List<UserRole> userRole) {
-        this.userRole = userRole;
-        return this;
-    }
-
-    public UserEntity addRole(UserRole userRole) {
-        this.userRole.add(userRole);
-        return this;
+    public void setRole(RoleEntity role) {
+        this.role = role;
     }
 
     public String getImageUrl() {
@@ -127,7 +121,7 @@ public class UserEntity {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", isActive=" + isActive +
-                ", userRole=" + userRole +
+                ", userRole=" + role +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", created=" + created +
                 ", modified=" + modified +
