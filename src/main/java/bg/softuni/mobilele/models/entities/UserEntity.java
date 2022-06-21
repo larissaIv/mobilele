@@ -26,6 +26,7 @@ public class UserEntity {
     @ManyToOne
     private RoleEntity role;
 
+
     private String imageUrl;
 
     private LocalDateTime created;
