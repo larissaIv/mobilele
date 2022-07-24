@@ -1,6 +1,6 @@
 package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.models.enums.Category;
+import bg.softuni.mobilele.models.enums.CategoryEnum;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,7 +17,7 @@ public class ModelEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Category category;
+    private CategoryEnum categoryEnum;
 
     @Column(nullable = false)
     private String imageUrl;
@@ -38,79 +38,88 @@ public class ModelEntity {
         return id;
     }
 
-    public void setId(long id) {
+    public ModelEntity setId(long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public ModelEntity setName(String name) {
         this.name = name;
+        return this;
     }
 
-    public Category getCategory() {
-        return category;
+    public CategoryEnum getCategory() {
+        return categoryEnum;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public ModelEntity setCategory(CategoryEnum categoryEnum) {
+        this.categoryEnum = categoryEnum;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public ModelEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(int startYear) {
+    public ModelEntity setStartYear(int startYear) {
         this.startYear = startYear;
+        return this;
     }
 
     public int getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(int endYear) {
+    public ModelEntity setEndYear(int endYear) {
         this.endYear = endYear;
+        return this;
     }
 
     public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public ModelEntity setCreated(LocalDateTime created) {
         this.created = created;
+        return this;
     }
 
     public LocalDateTime getModified() {
         return modified;
     }
 
-    public void setModified(LocalDateTime modified) {
+    public ModelEntity setModified(LocalDateTime modified) {
         this.modified = modified;
+        return this;
     }
 
     public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrandEntity brand) {
+    public ModelEntity setBrand(BrandEntity brand) {
         this.brand = brand;
+        return this;
     }
 
     @Override
     public String toString() {
         return "ModelEntity{" +
                 "name='" + name + '\'' +
-                ", category=" + category +
+                ", category=" + categoryEnum +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", startYear=" + startYear +
                 ", endYear=" + endYear +

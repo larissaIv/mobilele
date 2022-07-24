@@ -13,25 +13,18 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
-
+    private String email;
     private String password;
-
     private String firstName;
-
     private String lastName;
-
     private boolean isActive;
-
-    @ManyToOne
-    private RoleEntity role;
-
-
     private String imageUrl;
-
     private LocalDateTime created;
-
     private LocalDateTime modified;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<UserRoleEntity> roles = new ArrayList<>();
+
 
     public Long getId() {
         return id;
@@ -41,12 +34,12 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String username) {
+        this.email = username;
     }
 
     public String getPassword() {
@@ -81,12 +74,12 @@ public class UserEntity {
         isActive = active;
     }
 
-    public RoleEntity getRole() {
-        return role;
+    public void setRoles(List<UserRoleEntity> roles) {
+        this.roles = roles;
     }
 
-    public void setRole(RoleEntity role) {
-        this.role = role;
+    public List<UserRoleEntity> getRoles() {
+        return roles;
     }
 
     public String getImageUrl() {
@@ -117,12 +110,12 @@ public class UserEntity {
     public String toString() {
         return "UserEntity{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", isActive=" + isActive +
-                ", userRole=" + role +
+                ", userRole=" + roles +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", created=" + created +
                 ", modified=" + modified +

@@ -1,7 +1,7 @@
 package bg.softuni.mobilele.models.entities;
 
-import bg.softuni.mobilele.models.enums.Engine;
-import bg.softuni.mobilele.models.enums.Transmission;
+import bg.softuni.mobilele.models.enums.EngineEnum;
+import bg.softuni.mobilele.models.enums.TransmissionEnum;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -19,7 +19,7 @@ public class OfferEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Engine engine;
+    private EngineEnum engineEnum;
 
     private String imageUrl;
 
@@ -30,7 +30,7 @@ public class OfferEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Transmission transmission;
+    private TransmissionEnum transmissionEnum;
 
     private int year;
 
@@ -39,7 +39,7 @@ public class OfferEntity {
     private LocalDateTime modified;
 
     @ManyToOne
-    private ModelEntity modelEntity;
+    private ModelEntity model;
 
     @ManyToOne
     private UserEntity seller;
@@ -48,96 +48,108 @@ public class OfferEntity {
         return id;
     }
 
-    public void setId(Long id) {
+    public OfferEntity setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public OfferEntity setDescription(String description) {
         this.description = description;
+        return this;
     }
 
-    public Engine getEngine() {
-        return engine;
+    public EngineEnum getEngine() {
+        return engineEnum;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
+    public OfferEntity setEngine(EngineEnum engineEnum) {
+        this.engineEnum = engineEnum;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public OfferEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getMileage() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public OfferEntity setMileage(int mileage) {
         this.mileage = mileage;
+        return this;
     }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public OfferEntity setPrice(BigDecimal price) {
         this.price = price;
+        return this;
     }
 
-    public Transmission getTransmission() {
-        return transmission;
+    public TransmissionEnum getTransmission() {
+        return transmissionEnum;
     }
 
-    public void setTransmission(Transmission transmission) {
-        this.transmission = transmission;
+    public OfferEntity setTransmission(TransmissionEnum transmissionEnum) {
+        this.transmissionEnum = transmissionEnum;
+        return this;
     }
 
     public int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public OfferEntity setYear(int year) {
         this.year = year;
+        return this;
     }
 
     public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public OfferEntity setCreated(LocalDateTime created) {
         this.created = created;
+        return this;
     }
 
     public LocalDateTime getModified() {
         return modified;
     }
 
-    public void setModified(LocalDateTime modified) {
+    public OfferEntity setModified(LocalDateTime modified) {
         this.modified = modified;
+        return this;
     }
 
-    public ModelEntity getModelEntity() {
-        return modelEntity;
+    public ModelEntity getModel() {
+        return model;
     }
 
-    public void setModelEntity(ModelEntity modelEntity) {
-        this.modelEntity = modelEntity;
+    public OfferEntity setModel(ModelEntity modelEntity) {
+        this.model = modelEntity;
+        return this;
     }
 
     public UserEntity getSeller() {
         return seller;
     }
 
-    public void setSeller(UserEntity seller) {
+    public OfferEntity setSeller(UserEntity seller) {
         this.seller = seller;
+        return this;
     }
 
     @Override
@@ -145,15 +157,15 @@ public class OfferEntity {
         return "OfferEntity{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", engine=" + engine +
+                ", engine=" + engineEnum +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", mileage=" + mileage +
                 ", price=" + price +
-                ", transmission=" + transmission +
+                ", transmission=" + transmissionEnum +
                 ", year=" + year +
                 ", created=" + created +
                 ", modified=" + modified +
-                ", modelEntity=" + modelEntity +
+                ", modelEntity=" + model +
                 ", seller=" + seller +
                 '}';
     }

@@ -1,5 +1,5 @@
 package bg.softuni.mobilele.models.enums;
 
-public enum Category {
+public enum CategoryEnum {
     Car, Buss, Truck, Motorcycle
 }
