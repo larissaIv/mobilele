@@ -1,8 +1,8 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.models.entities.UserRoleEntity;
-import bg.softuni.mobilele.models.entities.UserEntity;
-import bg.softuni.mobilele.models.user.MobileleUserDetails;
+import bg.softuni.mobilele.model.entities.UserRoleEntity;
+import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.model.user.MobileleUserDetails;
 import bg.softuni.mobilele.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -33,7 +33,7 @@ public class MobileleUserDetailsService implements UserDetailsService {
                 user.getPassword(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.getRoles().stream().map(this::map).toList());
+                user.getUserRoles().stream().map(this::map).toList());
     }
 
     private GrantedAuthority map(UserRoleEntity userRoleEntity) {

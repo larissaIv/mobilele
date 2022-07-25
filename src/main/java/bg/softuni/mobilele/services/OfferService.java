@@ -1,11 +1,11 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.models.dto.offer.AddOfferDTO;
-import bg.softuni.mobilele.models.dto.offer.OfferDetailDTO;
-import bg.softuni.mobilele.models.entities.ModelEntity;
-import bg.softuni.mobilele.models.entities.OfferEntity;
-import bg.softuni.mobilele.models.entities.UserEntity;
-import bg.softuni.mobilele.models.mapper.OfferMapper;
+import bg.softuni.mobilele.model.dto.offer.AddOfferDTO;
+import bg.softuni.mobilele.model.dto.offer.OfferDetailDTO;
+import bg.softuni.mobilele.model.entities.ModelEntity;
+import bg.softuni.mobilele.model.entities.OfferEntity;
+import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.model.mapper.OfferMapper;
 import bg.softuni.mobilele.repositories.ModelRepository;
 import bg.softuni.mobilele.repositories.OfferRepository;
 import bg.softuni.mobilele.repositories.UserRepository;

@@ -1,8 +1,8 @@
 package bg.softuni.mobilele.web;
 
-import bg.softuni.mobilele.models.dto.offer.AddOfferDTO;
-import bg.softuni.mobilele.models.dto.offer.SearchOfferDTO;
-import bg.softuni.mobilele.models.user.MobileleUserDetails;
+import bg.softuni.mobilele.model.dto.offer.AddOfferDTO;
+import bg.softuni.mobilele.model.dto.offer.SearchOfferDTO;
+import bg.softuni.mobilele.model.user.MobileleUserDetails;
 import bg.softuni.mobilele.services.BrandService;
 import bg.softuni.mobilele.services.OfferService;
 import org.springframework.data.domain.Pageable;

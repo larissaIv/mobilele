@@ -32,6 +32,4 @@ public class I18NConfig {
         rms.setDefaultEncoding("UTF-8");
         return rms;
     }
-
-
 }
