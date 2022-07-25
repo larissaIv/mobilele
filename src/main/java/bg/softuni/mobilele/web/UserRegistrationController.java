@@ -1,6 +1,6 @@
 package bg.softuni.mobilele.web;
 
-import bg.softuni.mobilele.models.dto.user.UserRegisterDTO;
+import bg.softuni.mobilele.model.dto.user.UserRegisterDTO;
 import bg.softuni.mobilele.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

@@ -1,9 +1,9 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.models.dto.brand.BrandDTO;
-import bg.softuni.mobilele.models.dto.model.ModelDTO;
-import bg.softuni.mobilele.models.entities.BrandEntity;
-import bg.softuni.mobilele.models.entities.ModelEntity;
+import bg.softuni.mobilele.model.dto.brand.BrandDTO;
+import bg.softuni.mobilele.model.dto.model.ModelDTO;
+import bg.softuni.mobilele.model.entities.BrandEntity;
+import bg.softuni.mobilele.model.entities.ModelEntity;
 import bg.softuni.mobilele.repositories.BrandRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class BrandService {
 
-    private BrandRepository brandRepository;
+    private final BrandRepository brandRepository;
 
     public BrandService(BrandRepository brandRepository) {
         this.brandRepository = brandRepository;

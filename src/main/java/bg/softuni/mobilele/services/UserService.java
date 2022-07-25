@@ -1,8 +1,8 @@
 package bg.softuni.mobilele.services;
 
-import bg.softuni.mobilele.models.dto.user.UserRegisterDTO;
-import bg.softuni.mobilele.models.entities.UserEntity;
-import bg.softuni.mobilele.models.mapper.UserMapper;
+import bg.softuni.mobilele.model.dto.user.UserRegisterDTO;
+import bg.softuni.mobilele.model.entities.UserEntity;
+import bg.softuni.mobilele.model.mapper.UserMapper;
 import bg.softuni.mobilele.repositories.UserRepository;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
